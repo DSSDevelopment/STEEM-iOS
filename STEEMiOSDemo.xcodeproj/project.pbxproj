@@ -13,6 +13,19 @@
 		573004581D54BB0900BC3136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 573004571D54BB0900BC3136 /* Assets.xcassets */; };
 		5730045B1D54BB0900BC3136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 573004591D54BB0900BC3136 /* LaunchScreen.storyboard */; };
 		573004661D54BB0900BC3136 /* STEEMiOSDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573004651D54BB0900BC3136 /* STEEMiOSDemoTests.swift */; };
+		573004781D54BB4700BC3136 /* GMEllipticCurveCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 573004751D54BB4700BC3136 /* GMEllipticCurveCrypto.m */; };
+		573004791D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 573004771D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m */; };
+		5730047C1D54BBE100BC3136 /* BinUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730047B1D54BBE100BC3136 /* BinUtils.swift */; };
+		5730047E1D54BBF100BC3136 /* Base58.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730047D1D54BBF100BC3136 /* Base58.swift */; };
+		5730048A1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004851D54BD2400BC3136 /* libgmp.a */; };
+		5730048B1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004871D54BD2400BC3136 /* libgmp.a */; };
+		5730048C1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004891D54BD2400BC3136 /* libgmp.a */; };
+		5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730048D1D54BD7400BC3136 /* SwiftGMP.swift */; };
+		57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E9EB1D54C1FD001486F9 /* Chains.swift */; };
+		57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */; };
+		57E67BE21D551EEB00482CF3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE11D551EEB00482CF3 /* Account.swift */; };
+		57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE31D551F2700482CF3 /* Dictionary.swift */; };
+		6D13F5F2B13DEA51B68F09BE /* libPods-STEEMiOSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D129BDE3E77C2D3566C60F /* libPods-STEEMiOSDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29D129BDE3E77C2D3566C60F /* libPods-STEEMiOSDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STEEMiOSDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5730044D1D54BB0800BC3136 /* STEEMiOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEEMiOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573004501D54BB0800BC3136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		573004521D54BB0800BC3136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +50,27 @@
 		573004611D54BB0900BC3136 /* STEEMiOSDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STEEMiOSDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		573004651D54BB0900BC3136 /* STEEMiOSDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEEMiOSDemoTests.swift; sourceTree = "<group>"; };
 		573004671D54BB0900BC3136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		573004731D54BB4600BC3136 /* STEEMiOSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEEMiOSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		573004741D54BB4700BC3136 /* GMEllipticCurveCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMEllipticCurveCrypto.h; sourceTree = "<group>"; };
+		573004751D54BB4700BC3136 /* GMEllipticCurveCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMEllipticCurveCrypto.m; sourceTree = "<group>"; };
+		573004761D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMEllipticCurveCrypto+hash.h"; sourceTree = "<group>"; };
+		573004771D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMEllipticCurveCrypto+hash.m"; sourceTree = "<group>"; };
+		5730047B1D54BBE100BC3136 /* BinUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinUtils.swift; sourceTree = "<group>"; };
+		5730047D1D54BBF100BC3136 /* Base58.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58.swift; sourceTree = "<group>"; };
+		573004801D54BD2400BC3136 /* gmp-iPhoneOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gmp-iPhoneOS.h"; sourceTree = "<group>"; };
+		573004811D54BD2400BC3136 /* gmp-iPhoneSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gmp-iPhoneSimulator.h"; sourceTree = "<group>"; };
+		573004821D54BD2400BC3136 /* gmp-MacOSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "gmp-MacOSX.h"; sourceTree = "<group>"; };
+		573004831D54BD2400BC3136 /* gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gmp.h; sourceTree = "<group>"; };
+		573004851D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
+		573004871D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
+		573004891D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
+		5730048D1D54BD7400BC3136 /* SwiftGMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGMP.swift; sourceTree = "<group>"; };
+		57A5E9EB1D54C1FD001486F9 /* Chains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chains.swift; sourceTree = "<group>"; };
+		57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		57E67BE11D551EEB00482CF3 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		57E67BE31D551F2700482CF3 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		77825E20754846D67877A2C3 /* Pods-STEEMiOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C022699A3734F5E64CC564E2 /* Pods-STEEMiOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5730048B1D54BD2400BC3136 /* libgmp.a in Frameworks */,
+				5730048C1D54BD2400BC3136 /* libgmp.a in Frameworks */,
+				5730048A1D54BD2400BC3136 /* libgmp.a in Frameworks */,
+				6D13F5F2B13DEA51B68F09BE /* libPods-STEEMiOSDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F72A1748680731664573FA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29D129BDE3E77C2D3566C60F /* libPods-STEEMiOSDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		573004441D54BB0800BC3136 = {
 			isa = PBXGroup;
 			children = (
 				5730044F1D54BB0800BC3136 /* STEEMiOSDemo */,
 				573004641D54BB0900BC3136 /* STEEMiOSDemoTests */,
 				5730044E1D54BB0800BC3136 /* Products */,
+				959B8B46B717BF1D2E8BE331 /* Pods */,
+				1F72A1748680731664573FA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +126,12 @@
 		5730044F1D54BB0800BC3136 /* STEEMiOSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5730047F1D54BD0D00BC3136 /* GMPLib */,
+				5730047A1D54BBAE00BC3136 /* Prereqs */,
+				573004721D54BB3100BC3136 /* GMEllipticCurve */,
+				57E67BE01D551EDC00482CF3 /* Graphene */,
+				57A5E9EB1D54C1FD001486F9 /* Chains.swift */,
+				573004731D54BB4600BC3136 /* STEEMiOSDemo-Bridging-Header.h */,
 				573004501D54BB0800BC3136 /* AppDelegate.swift */,
 				573004521D54BB0800BC3136 /* ViewController.swift */,
 				573004541D54BB0900BC3136 /* Main.storyboard */,
@@ -96,6 +151,84 @@
 			path = STEEMiOSDemoTests;
 			sourceTree = "<group>";
 		};
+		573004721D54BB3100BC3136 /* GMEllipticCurve */ = {
+			isa = PBXGroup;
+			children = (
+				573004741D54BB4700BC3136 /* GMEllipticCurveCrypto.h */,
+				573004751D54BB4700BC3136 /* GMEllipticCurveCrypto.m */,
+				573004761D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.h */,
+				573004771D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m */,
+			);
+			name = GMEllipticCurve;
+			sourceTree = "<group>";
+		};
+		5730047A1D54BBAE00BC3136 /* Prereqs */ = {
+			isa = PBXGroup;
+			children = (
+				57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */,
+				5730047D1D54BBF100BC3136 /* Base58.swift */,
+				5730047B1D54BBE100BC3136 /* BinUtils.swift */,
+			);
+			name = Prereqs;
+			sourceTree = "<group>";
+		};
+		5730047F1D54BD0D00BC3136 /* GMPLib */ = {
+			isa = PBXGroup;
+			children = (
+				5730048D1D54BD7400BC3136 /* SwiftGMP.swift */,
+				573004801D54BD2400BC3136 /* gmp-iPhoneOS.h */,
+				573004811D54BD2400BC3136 /* gmp-iPhoneSimulator.h */,
+				573004821D54BD2400BC3136 /* gmp-MacOSX.h */,
+				573004831D54BD2400BC3136 /* gmp.h */,
+				573004841D54BD2400BC3136 /* iphoneos */,
+				573004861D54BD2400BC3136 /* iphonesimulator */,
+				573004881D54BD2400BC3136 /* macosx */,
+			);
+			name = GMPLib;
+			sourceTree = "<group>";
+		};
+		573004841D54BD2400BC3136 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				573004851D54BD2400BC3136 /* libgmp.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		573004861D54BD2400BC3136 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				573004871D54BD2400BC3136 /* libgmp.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		573004881D54BD2400BC3136 /* macosx */ = {
+			isa = PBXGroup;
+			children = (
+				573004891D54BD2400BC3136 /* libgmp.a */,
+			);
+			path = macosx;
+			sourceTree = "<group>";
+		};
+		57E67BE01D551EDC00482CF3 /* Graphene */ = {
+			isa = PBXGroup;
+			children = (
+				57E67BE11D551EEB00482CF3 /* Account.swift */,
+				57E67BE31D551F2700482CF3 /* Dictionary.swift */,
+			);
+			name = Graphene;
+			sourceTree = "<group>";
+		};
+		959B8B46B717BF1D2E8BE331 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C022699A3734F5E64CC564E2 /* Pods-STEEMiOSDemo.debug.xcconfig */,
+				77825E20754846D67877A2C3 /* Pods-STEEMiOSDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5730046A1D54BB0900BC3136 /* Build configuration list for PBXNativeTarget "STEEMiOSDemo" */;
 			buildPhases = (
+				500D1791EB3702DDA39F81DD /* [CP] Check Pods Manifest.lock */,
 				573004491D54BB0800BC3136 /* Sources */,
 				5730044A1D54BB0800BC3136 /* Frameworks */,
 				5730044B1D54BB0800BC3136 /* Resources */,
+				0E0B23C3C44C1230F0F7F14F /* [CP] Embed Pods Frameworks */,
+				04C35A88E2DAEE1942933444 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,12 +328,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04C35A88E2DAEE1942933444 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E0B23C3C44C1230F0F7F14F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		500D1791EB3702DDA39F81DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		573004491D54BB0800BC3136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */,
 				573004531D54BB0800BC3136 /* ViewController.swift in Sources */,
+				5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */,
+				5730047E1D54BBF100BC3136 /* Base58.swift in Sources */,
+				57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */,
+				5730047C1D54BBE100BC3136 /* BinUtils.swift in Sources */,
+				57E67BE21D551EEB00482CF3 /* Account.swift in Sources */,
+				573004781D54BB4700BC3136 /* GMEllipticCurveCrypto.m in Sources */,
+				57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */,
+				573004791D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m in Sources */,
 				573004511D54BB0800BC3136 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,23 +518,51 @@
 		};
 		5730046B1D54BB0900BC3136 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C022699A3734F5E64CC564E2 /* Pods-STEEMiOSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = STEEMiOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STEEMiOSDemo/iphoneos",
+					"$(PROJECT_DIR)/STEEMiOSDemo/iphonesimulator",
+					"$(PROJECT_DIR)/STEEMiOSDemo/macosx",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.dramatech.steem-ios.STEEMiOSDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STEEMiOSDemo/STEEMiOSDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5730046C1D54BB0900BC3136 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77825E20754846D67877A2C3 /* Pods-STEEMiOSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = STEEMiOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/STEEMiOSDemo/iphoneos",
+					"$(PROJECT_DIR)/STEEMiOSDemo/iphonesimulator",
+					"$(PROJECT_DIR)/STEEMiOSDemo/macosx",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.dramatech.steem-ios.STEEMiOSDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "STEEMiOSDemo/STEEMiOSDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -388,6 +609,7 @@
 				5730046C1D54BB0900BC3136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5730046D1D54BB0900BC3136 /* Build configuration list for PBXNativeTarget "STEEMiOSDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +618,7 @@
 				5730046F1D54BB0900BC3136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
