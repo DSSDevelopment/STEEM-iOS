@@ -5,3 +5,4 @@
 #import "GMEllipticCurveCrypto+hash.h"
 #import "gmp.h"
 #import "gmp-iPhoneOS.h"
+#import "CoreBitcoin.h"

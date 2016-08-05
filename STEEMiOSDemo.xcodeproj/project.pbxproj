@@ -25,6 +25,7 @@
 		57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */; };
 		57E67BE21D551EEB00482CF3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE11D551EEB00482CF3 /* Account.swift */; };
 		57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE31D551F2700482CF3 /* Dictionary.swift */; };
+		57E67BE61D551FAB00482CF3 /* PasswordKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE51D551FAB00482CF3 /* PasswordKey.swift */; };
 		6D13F5F2B13DEA51B68F09BE /* libPods-STEEMiOSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D129BDE3E77C2D3566C60F /* libPods-STEEMiOSDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		57E67BE11D551EEB00482CF3 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		57E67BE31D551F2700482CF3 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		57E67BE51D551FAB00482CF3 /* PasswordKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordKey.swift; sourceTree = "<group>"; };
 		77825E20754846D67877A2C3 /* Pods-STEEMiOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C022699A3734F5E64CC564E2 /* Pods-STEEMiOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				57E67BE11D551EEB00482CF3 /* Account.swift */,
+				57E67BE51D551FAB00482CF3 /* PasswordKey.swift */,
 				57E67BE31D551F2700482CF3 /* Dictionary.swift */,
 			);
 			name = Graphene;
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E67BE61D551FAB00482CF3 /* PasswordKey.swift in Sources */,
 				57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */,
 				573004531D54BB0800BC3136 /* ViewController.swift in Sources */,
 				5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */,
