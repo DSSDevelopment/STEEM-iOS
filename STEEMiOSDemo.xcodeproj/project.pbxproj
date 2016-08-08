@@ -21,6 +21,8 @@
 		5730048B1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004871D54BD2400BC3136 /* libgmp.a */; };
 		5730048C1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004891D54BD2400BC3136 /* libgmp.a */; };
 		5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730048D1D54BD7400BC3136 /* SwiftGMP.swift */; };
+		577D9C3E1D58CB5900F69042 /* BrainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D9C3D1D58CB5900F69042 /* BrainKey.swift */; };
+		577D9C401D59046300F69042 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D9C3F1D59046300F69042 /* Address.swift */; };
 		57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E9EB1D54C1FD001486F9 /* Chains.swift */; };
 		57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */; };
 		57E67BE21D551EEB00482CF3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE11D551EEB00482CF3 /* Account.swift */; };
@@ -66,6 +68,8 @@
 		573004871D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		573004891D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		5730048D1D54BD7400BC3136 /* SwiftGMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGMP.swift; sourceTree = "<group>"; };
+		577D9C3D1D58CB5900F69042 /* BrainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainKey.swift; sourceTree = "<group>"; };
+		577D9C3F1D59046300F69042 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		57A5E9EB1D54C1FD001486F9 /* Chains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chains.swift; sourceTree = "<group>"; };
 		57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		57E67BE11D551EEB00482CF3 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				57E67BE11D551EEB00482CF3 /* Account.swift */,
 				57E67BE51D551FAB00482CF3 /* PasswordKey.swift */,
 				57E67BE31D551F2700482CF3 /* Dictionary.swift */,
+				577D9C3D1D58CB5900F69042 /* BrainKey.swift */,
+				577D9C3F1D59046300F69042 /* Address.swift */,
 			);
 			name = Graphene;
 			sourceTree = "<group>";
@@ -390,11 +396,13 @@
 				5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */,
 				5730047E1D54BBF100BC3136 /* Base58.swift in Sources */,
 				57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */,
+				577D9C401D59046300F69042 /* Address.swift in Sources */,
 				5730047C1D54BBE100BC3136 /* BinUtils.swift in Sources */,
 				57E67BE21D551EEB00482CF3 /* Account.swift in Sources */,
 				573004781D54BB4700BC3136 /* GMEllipticCurveCrypto.m in Sources */,
 				57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */,
 				573004791D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m in Sources */,
+				577D9C3E1D58CB5900F69042 /* BrainKey.swift in Sources */,
 				573004511D54BB0800BC3136 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
