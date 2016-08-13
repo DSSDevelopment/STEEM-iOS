@@ -50,7 +50,9 @@ class BrainKey
     {
         let encoded = "\(brainkey) \(sequence)"
         let a = typeToBytes(encoded)
-        let s = BTC256FromNSString("\(BTC256FromNSString("\(a)"))")
+        let b = bytesToType(a, NSData.self)
+        
+        let s = BTCSHA256(BTCSHA512(b))
         return " " //Need PrivateKey class
     }
     
