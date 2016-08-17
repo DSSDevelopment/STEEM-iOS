@@ -180,7 +180,7 @@ class SignedTransaction: GrapheneObject
             let key = PrivateKey(WIF: wif)
             //use signatureForHash to get signature using self.message and this WIF key
             let sig = key.signatureForSTEEMMessage(self.digest!.bytesArray())
-            //let sig = key.signatureForHash(self.digest!)
+            //let sig = key.compactSignatureForHash(BTCSHA256(self.digest!))
             //append signature to array
             print("Found raw signature: \(sig!.bytesArray())")
             signatures.append(sig!.bytesArray())

@@ -46,7 +46,7 @@ class Tests
         
         let compare = "f68585abf4dce7c80457010007666f6f6261726107666f6f6261726307666f6f62617264e8030001202e09123f732a438ef6d6138484d7adedfdcf4a4f3d171f7fcafe836efa2a3c8877290bd34c67eded824ac0cc39e33d154d0617f64af936a83c442f62aef08fec"
         
-        assert(compare.substringToIndex(compare.startIndex.advancedBy(130)) == txWire.substringToIndex(txWire.startIndex.advancedBy(130)), "comparison failure.")
+        assert(compare.substringToIndex(compare.startIndex.advancedBy(compare.characters.count - 130)) == txWire.substringToIndex(txWire.startIndex.advancedBy(compare.characters.count - 130)), "comparison failure.")
 
         
     }
