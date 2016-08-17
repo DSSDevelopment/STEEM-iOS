@@ -8,13 +8,14 @@
 
 import Foundation
 
-class Permission
+class Permission : GrapheneObject
 {
     var authKeys: [(String, Int)]?
     var authAccounts: [(String, Int)]?
     
     required init(keyAuths: [(String, Int)], accountAuths: [(String, Int)], weightThreshold: UInt32)
     {
+        super.init()
         authKeys = keyAuths.sort({ (s1: (key: String, num: Int), s2: (key: String, num: Int)) -> Bool in
             //sort the keys using the hexadecimal representation of their first byte
             //after hashing
@@ -32,9 +33,25 @@ class Permission
             
             return buf1[0] > buf2[0]
         })
-        
         authAccounts = accountAuths
+        data = OrderedDictionary<String,String>()
+        if authKeys != nil
+        {
+            for e in authKeys!
+            {
+                let newElem = (e.0, "\(e.1)")
+                data?.insertElement(newElem, atIndex: data!.endIndex)
+            }
+        }
         
+        if authAccounts != nil
+        {
+            for e in authAccounts!
+            {
+                let newElem = (e.0, "\(e.1)")
+                data?.insertElement(newElem, atIndex: data!.endIndex)
+            }
+        }
         
         
     }

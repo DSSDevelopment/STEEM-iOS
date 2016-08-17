@@ -21,6 +21,7 @@
 		5730048B1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004871D54BD2400BC3136 /* libgmp.a */; };
 		5730048C1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004891D54BD2400BC3136 /* libgmp.a */; };
 		5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730048D1D54BD7400BC3136 /* SwiftGMP.swift */; };
+		57364D621D6271BD00423415 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57364D611D6271BD00423415 /* NSDateISO8601.swift */; };
 		57510DFA1D5F945800403542 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DF91D5F945800403542 /* PrivateKey.swift */; };
 		57510DFC1D5F9DB900403542 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DFB1D5F9DB900403542 /* Operations.swift */; };
 		57510DFE1D5FB6A300403542 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DFD1D5FB6A300403542 /* Permission.swift */; };
@@ -33,6 +34,8 @@
 		57E67BE21D551EEB00482CF3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE11D551EEB00482CF3 /* Account.swift */; };
 		57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE31D551F2700482CF3 /* Dictionary.swift */; };
 		57E67BE61D551FAB00482CF3 /* PasswordKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E67BE51D551FAB00482CF3 /* PasswordKey.swift */; };
+		57EBB5261D60F9F500215248 /* SignedTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBB5251D60F9F500215248 /* SignedTransaction.swift */; };
+		57EBB5281D6155BB00215248 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EBB5271D6155BB00215248 /* Tests.swift */; };
 		6D13F5F2B13DEA51B68F09BE /* libPods-STEEMiOSDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D129BDE3E77C2D3566C60F /* libPods-STEEMiOSDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,7 @@
 		573004871D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		573004891D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		5730048D1D54BD7400BC3136 /* SwiftGMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGMP.swift; sourceTree = "<group>"; };
+		57364D611D6271BD00423415 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		57510DF91D5F945800403542 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
 		57510DFB1D5F9DB900403542 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		57510DFD1D5FB6A300403542 /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		57E67BE11D551EEB00482CF3 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		57E67BE31D551F2700482CF3 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		57E67BE51D551FAB00482CF3 /* PasswordKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordKey.swift; sourceTree = "<group>"; };
+		57EBB5251D60F9F500215248 /* SignedTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedTransaction.swift; sourceTree = "<group>"; };
+		57EBB5271D6155BB00215248 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		77825E20754846D67877A2C3 /* Pods-STEEMiOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C022699A3734F5E64CC564E2 /* Pods-STEEMiOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEEMiOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEEMiOSDemo/Pods-STEEMiOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +160,7 @@
 				573004571D54BB0900BC3136 /* Assets.xcassets */,
 				573004591D54BB0900BC3136 /* LaunchScreen.storyboard */,
 				5730045C1D54BB0900BC3136 /* Info.plist */,
+				57EBB5271D6155BB00215248 /* Tests.swift */,
 			);
 			path = STEEMiOSDemo;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 				57A5E9ED1D54C20C001486F9 /* OrderedDictionary.swift */,
 				5730047D1D54BBF100BC3136 /* Base58.swift */,
 				5730047B1D54BBE100BC3136 /* BinUtils.swift */,
+				57364D611D6271BD00423415 /* NSDateISO8601.swift */,
 			);
 			name = Prereqs;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				57510DFB1D5F9DB900403542 /* Operations.swift */,
 				57510DFD1D5FB6A300403542 /* Permission.swift */,
 				57510DFF1D5FD21700403542 /* GrapheneObject.swift */,
+				57EBB5251D60F9F500215248 /* SignedTransaction.swift */,
 			);
 			name = Graphene;
 			sourceTree = "<group>";
@@ -412,17 +421,20 @@
 				5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */,
 				5730047E1D54BBF100BC3136 /* Base58.swift in Sources */,
 				57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */,
+				57EBB5281D6155BB00215248 /* Tests.swift in Sources */,
 				577D9C401D59046300F69042 /* Address.swift in Sources */,
 				5730047C1D54BBE100BC3136 /* BinUtils.swift in Sources */,
 				57E67BE21D551EEB00482CF3 /* Account.swift in Sources */,
 				57510DFC1D5F9DB900403542 /* Operations.swift in Sources */,
 				573004781D54BB4700BC3136 /* GMEllipticCurveCrypto.m in Sources */,
+				57364D621D6271BD00423415 /* NSDateISO8601.swift in Sources */,
 				57CAA6171D5BDBAC003944D2 /* PublicKey.swift in Sources */,
 				57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */,
 				573004791D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m in Sources */,
 				57510DFE1D5FB6A300403542 /* Permission.swift in Sources */,
 				577D9C3E1D58CB5900F69042 /* BrainKey.swift in Sources */,
 				573004511D54BB0800BC3136 /* AppDelegate.swift in Sources */,
+				57EBB5261D60F9F500215248 /* SignedTransaction.swift in Sources */,
 				57510DFA1D5F945800403542 /* PrivateKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
