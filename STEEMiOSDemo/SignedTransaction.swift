@@ -88,11 +88,18 @@ class SignedTransaction: GrapheneObject
         self.signatures = [[UInt8]]()
         //self.data!["signatures"] = ""
         //print("0000000000000000000000000000000000000000000000000000000000000000\(self.getBytes())")
-        let chainID = unhexlify("0000000000000000000000000000000000000000000000000000000000000000")
-        
-        message = "\(chainID)\(self.getWireFormat()))".dataUsingEncoding(NSUTF8StringEncoding)
-        print(chainID)
+        //let chainID = unhexlify("0000000000000000000000000000000000000000000000000000000000000000")
+        let chainData = NSMutableData()
+        for _ in 0...31
+        {
+            chainData.appendData("\u{00}".dataUsingEncoding(NSUTF8StringEncoding)!)
+        }
+        chainData.appendData(NSData(self.getWireFormat()))
+        //message = "\(chainID)\(self.getWireFormat()))".dataUsingEncoding(NSUTF8StringEncoding)
+        message = (chainData.copy() as! NSData)
+        print("MESSAGE: \(hexlify(message!))")
         digest = BTCSHA256(message)
+        print("DIGEST: \(hexlify(digest!))")
         
         self.signatures = sigs
     }
@@ -117,6 +124,7 @@ class SignedTransaction: GrapheneObject
         {
             bytes.appendContentsOf(op.Operation.bytes())
         }
+        bytes.appendContentsOf("\u{00}".dataUsingEncoding(NSUTF8StringEncoding)!.bytesArray())
         for sig in signatures
         {
             print("HEX SIGNATURE: \(hexlify(NSData(sig)))")
@@ -179,7 +187,7 @@ class SignedTransaction: GrapheneObject
             //Instantiate a BTCKey with WIF key
             let key = PrivateKey(WIF: wif)
             //use signatureForHash to get signature using self.message and this WIF key
-            let sig = key.signatureForSTEEMMessage(self.digest!.bytesArray())
+            let sig = key.signatureForSTEEMMessage(self.digest!)
             //let sig = key.compactSignatureForHash(BTCSHA256(self.digest!))
             //append signature to array
             print("Found raw signature: \(sig!.bytesArray())")

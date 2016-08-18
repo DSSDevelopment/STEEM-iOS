@@ -11,7 +11,7 @@ import Foundation
 class PrivateKey: BTCKey
 {
     
-    func signatureForSTEEMMessage(msg: [UInt8]) -> NSData?
+    func signatureForSTEEMMessage(msg: NSData) -> NSData?
     {
         //var newMsg = msg
         for i in 1...255
@@ -27,15 +27,16 @@ class PrivateKey: BTCKey
                 //.dataUsingEncoding(NSUTF8StringEncoding)!.bytesArray()
                 //newMsg += scalar
             }
-            let newMsg = NSMutableData(msg)//
+            let newMsg = msg.mutableCopy()//
             //newMsg.appendBytes([UInt8(0)], length: 1)
             newMsg.appendData("\u{00}".dataUsingEncoding(NSUTF8StringEncoding)!)
-            let k = super.signatureNonceForHash(BTCSHA256(newMsg))
+            print("Final Message: \(hexlify(newMsg.copy() as! NSData))")
+            let k = super.signatureNonceForHash(BTCSHA256(newMsg.copy() as! NSData))
             let kNum = BTCMutableBigNumber(unsignedBigEndian: k)
             print("k: \(kNum)")
             //Now, sign the message using the original bytes, but the k value determined
             //from the message + incrementing byte
-            return super.signatureForHash(BTCSHA256(NSData(msg)), kValue: k)
+            return super.signatureForHash(NSData(data: msg))
             
         }
         return nil
