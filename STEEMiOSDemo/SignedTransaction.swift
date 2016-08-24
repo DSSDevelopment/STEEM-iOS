@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SignedTransaction: GrapheneObject
+class SignedTransaction: GrapheneObject, Encodable
 {
     var refNum: UInt16?
     var refPrefix: UInt32?
@@ -197,5 +197,39 @@ class SignedTransaction: GrapheneObject
         let newSigs = signatures
         self.signatures = signatures
         self.data!["signatures"] = "\(NSString(data: NSData(newSigs.flatMap({$0})), encoding: NSUTF8StringEncoding))"
+    }
+    
+    func buildJSON()
+    {
+        var json = JSON()
+        for op in operations!
+        {
+            json.add(op.Operation.toJSON()!)
+        }
+        print("JSON: ")
+        print("\(json)")
+        print("###############")
+    }
+    
+    func toJSON() -> JSON? {
+        var inner = JSON()
+        for op in operations!
+        {
+            inner.add(op.Operation.toJSON()!)
+        }
+        let sigArray = NSMutableArray()
+        for sig in self.signatures
+        {
+            sigArray.addObject(NSData(sig).hexString())
+        }
+        let outer = jsonify([
+            "ref_block_num" ~~> "\(self.refNum!)",
+            "ref_block_prefix" ~~> "\(self.refPrefix!)",
+            "expiration" ~~> self.expiration,
+            "operations" ~~> inner,
+            "extensions" ~~> self.extensions,
+            "signatures" ~~> sigArray
+        ])
+        return outer
     }
 }

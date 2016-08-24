@@ -12,6 +12,8 @@
 
 import Foundation
 
+typealias Payload = [String : AnyObject]
+
 
 class GrapheneObject
 {
@@ -68,6 +70,4 @@ class GrapheneObject
         }
         return bytes
     }
-    
-    
 }

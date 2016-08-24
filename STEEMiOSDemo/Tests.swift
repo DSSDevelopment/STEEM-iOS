@@ -27,6 +27,9 @@ class Tests
         
         let compare = "f68585abf4dce7c80457010107666f6f6261726107666f6f6261726207666f6f6261726307666f6f6261726407666f6f6261726507666f6f626172660e7b22666f6f223a2022626172227d00011f34a882f3b06894c29f52e06b8a28187b84b817c0e40f124859970b32511a778736d682f24d3a6e6da124b340668d25bbcf85ffa23ca622b307ffe10cf182bb82"
         assert(compare.substringToIndex(compare.startIndex.advancedBy(130)) == txWire.substringToIndex(txWire.startIndex.advancedBy(130)), "comparison failure.")
+        
+        print(tx.toJSON()!)
+        
     }
     
     func testVote()
@@ -48,7 +51,7 @@ class Tests
         
         assert(compare.substringToIndex(compare.startIndex.advancedBy(compare.characters.count - 130)) == txWire.substringToIndex(txWire.startIndex.advancedBy(compare.characters.count - 130)), "comparison failure.")
 
-        
+        print(tx.toJSON()!)
     }
     
 }

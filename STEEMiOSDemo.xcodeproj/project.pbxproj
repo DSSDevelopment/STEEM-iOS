@@ -22,6 +22,12 @@
 		5730048C1D54BD2400BC3136 /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573004891D54BD2400BC3136 /* libgmp.a */; };
 		5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730048D1D54BD7400BC3136 /* SwiftGMP.swift */; };
 		57364D621D6271BD00423415 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57364D611D6271BD00423415 /* NSDateISO8601.swift */; };
+		5740A7961D6D395C008E6BDB /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7901D6D395C008E6BDB /* Decoder.swift */; };
+		5740A7971D6D395C008E6BDB /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7911D6D395C008E6BDB /* Encoder.swift */; };
+		5740A7981D6D395C008E6BDB /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7921D6D395C008E6BDB /* ExtensionArray.swift */; };
+		5740A7991D6D395C008E6BDB /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7931D6D395C008E6BDB /* ExtensionDictionary.swift */; };
+		5740A79A1D6D395C008E6BDB /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7941D6D395C008E6BDB /* Gloss.swift */; };
+		5740A79B1D6D395C008E6BDB /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740A7951D6D395C008E6BDB /* Operators.swift */; };
 		57510DFA1D5F945800403542 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DF91D5F945800403542 /* PrivateKey.swift */; };
 		57510DFC1D5F9DB900403542 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DFB1D5F9DB900403542 /* Operations.swift */; };
 		57510DFE1D5FB6A300403542 /* Permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57510DFD1D5FB6A300403542 /* Permission.swift */; };
@@ -77,6 +83,12 @@
 		573004891D54BD2400BC3136 /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
 		5730048D1D54BD7400BC3136 /* SwiftGMP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGMP.swift; sourceTree = "<group>"; };
 		57364D611D6271BD00423415 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
+		5740A7901D6D395C008E6BDB /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		5740A7911D6D395C008E6BDB /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		5740A7921D6D395C008E6BDB /* ExtensionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
+		5740A7931D6D395C008E6BDB /* ExtensionDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDictionary.swift; sourceTree = "<group>"; };
+		5740A7941D6D395C008E6BDB /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gloss.swift; sourceTree = "<group>"; };
+		5740A7951D6D395C008E6BDB /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		57510DF91D5F945800403542 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
 		57510DFB1D5F9DB900403542 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		57510DFD1D5FB6A300403542 /* Permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permission.swift; sourceTree = "<group>"; };
@@ -148,6 +160,7 @@
 		5730044F1D54BB0800BC3136 /* STEEMiOSDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5740A78F1D6D38F3008E6BDB /* Gloss */,
 				5730047F1D54BD0D00BC3136 /* GMPLib */,
 				5730047A1D54BBAE00BC3136 /* Prereqs */,
 				573004721D54BB3100BC3136 /* GMEllipticCurve */,
@@ -233,6 +246,19 @@
 				573004891D54BD2400BC3136 /* libgmp.a */,
 			);
 			path = macosx;
+			sourceTree = "<group>";
+		};
+		5740A78F1D6D38F3008E6BDB /* Gloss */ = {
+			isa = PBXGroup;
+			children = (
+				5740A7901D6D395C008E6BDB /* Decoder.swift */,
+				5740A7911D6D395C008E6BDB /* Encoder.swift */,
+				5740A7921D6D395C008E6BDB /* ExtensionArray.swift */,
+				5740A7931D6D395C008E6BDB /* ExtensionDictionary.swift */,
+				5740A7941D6D395C008E6BDB /* Gloss.swift */,
+				5740A7951D6D395C008E6BDB /* Operators.swift */,
+			);
+			name = Gloss;
 			sourceTree = "<group>";
 		};
 		57E67BE01D551EDC00482CF3 /* Graphene */ = {
@@ -419,18 +445,24 @@
 				57A5E9EE1D54C20C001486F9 /* OrderedDictionary.swift in Sources */,
 				573004531D54BB0800BC3136 /* ViewController.swift in Sources */,
 				5730048E1D54BD7400BC3136 /* SwiftGMP.swift in Sources */,
+				5740A7991D6D395C008E6BDB /* ExtensionDictionary.swift in Sources */,
 				5730047E1D54BBF100BC3136 /* Base58.swift in Sources */,
 				57E67BE41D551F2700482CF3 /* Dictionary.swift in Sources */,
 				57EBB5281D6155BB00215248 /* Tests.swift in Sources */,
+				5740A79B1D6D395C008E6BDB /* Operators.swift in Sources */,
+				5740A7971D6D395C008E6BDB /* Encoder.swift in Sources */,
 				577D9C401D59046300F69042 /* Address.swift in Sources */,
 				5730047C1D54BBE100BC3136 /* BinUtils.swift in Sources */,
 				57E67BE21D551EEB00482CF3 /* Account.swift in Sources */,
 				57510DFC1D5F9DB900403542 /* Operations.swift in Sources */,
+				5740A7981D6D395C008E6BDB /* ExtensionArray.swift in Sources */,
 				573004781D54BB4700BC3136 /* GMEllipticCurveCrypto.m in Sources */,
 				57364D621D6271BD00423415 /* NSDateISO8601.swift in Sources */,
+				5740A7961D6D395C008E6BDB /* Decoder.swift in Sources */,
 				57CAA6171D5BDBAC003944D2 /* PublicKey.swift in Sources */,
 				57A5E9EC1D54C1FD001486F9 /* Chains.swift in Sources */,
 				573004791D54BB4700BC3136 /* GMEllipticCurveCrypto+hash.m in Sources */,
+				5740A79A1D6D395C008E6BDB /* Gloss.swift in Sources */,
 				57510DFE1D5FB6A300403542 /* Permission.swift in Sources */,
 				577D9C3E1D58CB5900F69042 /* BrainKey.swift in Sources */,
 				573004511D54BB0800BC3136 /* AppDelegate.swift in Sources */,

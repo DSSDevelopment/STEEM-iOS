@@ -42,7 +42,7 @@ enum AssetClass: String {
     case SBD = "SBD"
 }
 
-protocol SerializableSTEEMOperation
+protocol SerializableSTEEMOperation : Glossy
 {
     func bytes() -> [UInt8]
 }
@@ -214,6 +214,24 @@ class Vote : SerializableSTEEMOperation {
         return desc
     }
     
+    required init?(json: JSON) {
+        self.voter = ("voter" <~~ json)!
+        self.author = ("author" <~~ json)!
+        self.permlink = ("permlink" <~~ json)!
+        self.weight = ("weight" <~~ json)!
+    }
+    
+    func toJSON() -> JSON? {
+        let inner = jsonify([
+            "voter" ~~> self.voter,
+            "author" ~~> self.author,
+            "permlink" ~~> self.permlink,
+            "weight" ~~> "\(self.weight)"
+            ])
+        let outer = ["vote" : inner!]
+        return outer
+    }
+    
     /*func description() -> OrderedDictionary<String, String>
     {
         return OrderedDictionary(dictionaryLiteral:
@@ -227,7 +245,7 @@ class Vote : SerializableSTEEMOperation {
 
 }
 
-struct Comment : SerializableSTEEMOperation {
+class Comment : SerializableSTEEMOperation {
     var parentAuthor: String
     var parentPermlink: String
     var author: String
@@ -235,6 +253,17 @@ struct Comment : SerializableSTEEMOperation {
     var title: String
     var body: String
     var jsonMetadata: String
+    
+    init(parentAuthor: String, parentPermlink: String, author: String, permlink: String, title: String, body: String, jsonMetadata: String)
+    {
+        self.parentAuthor = parentAuthor
+        self.parentPermlink = parentPermlink
+        self.author = author
+        self.permlink = permlink
+        self.title = title
+        self.body = body
+        self.jsonMetadata = jsonMetadata
+    }
     
     func description() -> OrderedDictionary<String, String>
     {
@@ -249,21 +278,45 @@ struct Comment : SerializableSTEEMOperation {
         )
     }
     
-        func bytes() -> [UInt8] {
-            var desc = [UInt8]()
-            desc += [UInt8(01)]
-            desc += [UInt8(01)]
-            for str in [self.parentAuthor, self.parentPermlink, self.author, self.permlink, self.title, self.body]
-            {
-                //desc.appendContentsOf("\u{07}".toSTEEMWireFormat())
-                desc.appendContentsOf(str.toSTEEMWireFormat())
-                print("String: \(str) Hex: \(str.toSTEEMWireFormat())")
-            }
-            //desc.appendContentsOf("\u{0e}".toSTEEMWireFormat())
-            desc.appendContentsOf(self.jsonMetadata.toSTEEMWireFormat())
-            
-            return desc
+    func bytes() -> [UInt8] {
+        var desc = [UInt8]()
+        desc += [UInt8(01)]
+        desc += [UInt8(01)]
+        for str in [self.parentAuthor, self.parentPermlink, self.author, self.permlink, self.title, self.body]
+        {
+            //desc.appendContentsOf("\u{07}".toSTEEMWireFormat())
+            desc.appendContentsOf(str.toSTEEMWireFormat())
+            print("String: \(str) Hex: \(str.toSTEEMWireFormat())")
         }
+        //desc.appendContentsOf("\u{0e}".toSTEEMWireFormat())
+        desc.appendContentsOf(self.jsonMetadata.toSTEEMWireFormat())
+        
+        return desc
+    }
+    
+    required init?(json: JSON) {
+        self.parentAuthor = ("parent_author" <~~ json)!
+        self.parentPermlink = ("parent_permlink" <~~ json)!
+        self.author = ("author" <~~ json)!
+        self.permlink = ("permlink" <~~ json)!
+        self.title = ("title" <~~ json)!
+        self.body = ("body" <~~ json)!
+        self.jsonMetadata = ("json_metadata" <~~ json)!
+    }
+    
+    func toJSON() -> JSON? {
+        let inner = jsonify([
+            "parent_author" ~~> self.parentAuthor,
+            "parent_permlink" ~~> self.parentPermlink,
+            "author" ~~> self.author,
+            "permlink" ~~> self.permlink,
+            "title" ~~> self.title,
+            "body" ~~> self.body,
+            "json_metadata" ~~> self.jsonMetadata
+            ])
+        let outer = ["comment" : inner!]
+        return outer
+    }
 
 }
 
