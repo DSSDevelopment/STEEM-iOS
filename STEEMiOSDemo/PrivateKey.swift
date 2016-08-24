@@ -55,7 +55,7 @@ class PrivateKey: BTCKey
         print("revalue: \(revalue)")
         let rebyte = unhexlify(String(format:"%2x", revalue))
  
-        let predata = "\u{01}".dataUsingEncoding(NSUTF8StringEncoding)!.mutableCopy() as! NSMutableData
+        let predata = NSMutableData()
         predata.appendData(rebyte!)
         predata.appendData(sigComponents.0)
         predata.appendData(sigComponents.1)

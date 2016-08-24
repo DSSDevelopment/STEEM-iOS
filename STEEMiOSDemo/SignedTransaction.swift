@@ -125,6 +125,7 @@ class SignedTransaction: GrapheneObject, Encodable
             bytes.appendContentsOf(op.Operation.bytes())
         }
         bytes.appendContentsOf("\u{00}".dataUsingEncoding(NSUTF8StringEncoding)!.bytesArray())
+        bytes.appendContentsOf("\u{01}".dataUsingEncoding(NSUTF8StringEncoding)!.bytesArray())
         for sig in signatures
         {
             print("HEX SIGNATURE: \(NSData(sig).hexString())")
