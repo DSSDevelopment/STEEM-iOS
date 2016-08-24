@@ -320,6 +320,114 @@ class Comment : SerializableSTEEMOperation {
 
 }
 
+class Transfer: SerializableSTEEMOperation
+{
+    var from: String
+    var to: String
+    var amount: String
+    var memo: String
+    
+    func bytes() -> [UInt8] {
+        var desc = [UInt8]()
+        desc += [UInt8(01)]
+        desc += [UInt8(02)]
+        for str in [self.from, self.to, self.amount, self.memo]
+        {
+            desc.appendContentsOf(str.toSTEEMWireFormat())
+        }
+        return desc
+    }
+    
+    required init?(json: JSON) {
+        self.from = ("from" <~~ json)!
+        self.to = ("to" <~~ json)!
+        self.amount = ("amount" <~~ json)!
+        self.memo = ("memo" <~~ json)!
+        
+    }
+    
+    func toJSON() -> JSON? {
+        let inner = jsonify([
+            "from" ~~> self.from,
+            "to" ~~> self.to,
+            "amount" ~~> self.amount,
+            "memo" ~~> self.memo
+            ])
+        let outer = ["transfer" : inner!]
+        return outer
+    }
+}
+
+class TransferToVesting: SerializableSTEEMOperation
+{
+    var from: String
+    var to: String
+    var amount: String
+    
+    func bytes() -> [UInt8] {
+        var desc = [UInt8]()
+        desc += [UInt8(01)]
+        desc += [UInt8(03)]
+        for str in [self.from, self.to, self.amount]
+        {
+            desc.appendContentsOf(str.toSTEEMWireFormat())
+        }
+        return desc
+    }
+    
+    required init?(json: JSON) {
+        self.from = ("from" <~~ json)!
+        self.to = ("to" <~~ json)!
+        self.amount = ("amount" <~~ json)!
+        
+    }
+    
+    func toJSON() -> JSON? {
+        let inner = jsonify([
+            "from" ~~> self.from,
+            "to" ~~> self.to,
+            "amount" ~~> self.amount,
+            ])
+        let outer = ["transfer_to_vesting" : inner!]
+        return outer
+    }
+}
+
+class WithdrawVesting: SerializableSTEEMOperation
+{
+    var from: String
+    var to: String
+    var amount: String
+    
+    func bytes() -> [UInt8] {
+        var desc = [UInt8]()
+        desc += [UInt8(01)]
+        desc += [UInt8(04)]
+        for str in [self.from, self.to, self.amount]
+        {
+            desc.appendContentsOf(str.toSTEEMWireFormat())
+        }
+        return desc
+    }
+    
+    required init?(json: JSON) {
+        self.from = ("from" <~~ json)!
+        self.to = ("to" <~~ json)!
+        self.amount = ("amount" <~~ json)!
+        
+    }
+    
+    func toJSON() -> JSON? {
+        let inner = jsonify([
+            "from" ~~> self.from,
+            "to" ~~> self.to,
+            "amount" ~~> self.amount,
+            ])
+        let outer = ["withdraw_vesting" : inner!]
+        return outer
+    }
+}
+
 struct Amount {
     var amount: Double
     var asset: AssetClass
@@ -344,6 +452,11 @@ struct Amount {
     {
         let desc = "%.\(precision)f %@"
         return String(format: desc, amount, asset.rawValue)
+    }
+    
+    func bytes() -> [UInt8]
+    {
+        return description().toSTEEMWireFormat()
     }
     
 }
