@@ -25,15 +25,42 @@ class PrivateKey: BTCKey
         let k = super.signatureNonceForHash(BTCSHA256(newMsg.copy() as! NSData))
         let kNum = BTCMutableBigNumber(unsignedBigEndian: k)
         print("k: \(kNum)")
+    
         //Now, sign the message using the original bytes, but the k value determined
         //from the message + incrementing byte
-        let sig = super.signatureForHash(NSData(data: msg), kValue: k)
+            let sig = super.signatureForHash(NSData(data: msg), kValue: k)
             if sig != nil
             {
-                return sig
+                //let rparam = calculateRecoveryParameter(sig, hash: NSData(data: msg))
+                let finalSig = attachRecoveryParameter(sig, hash: NSData(data:msg))
+                return finalSig
             }
         }
         return nil
+    }
+    
+    func stripDERFormatting(signature: NSData) -> (r: NSData, s:NSData)
+    {
+        let r = signature.subdataWithRange(NSRange(location: 4, length: 32))
+        let s = signature.subdataWithRange(NSRange(location:38, length: 32))
+        return(r, s)
+    }
+    
+    func attachRecoveryParameter(sig: NSData, hash: NSData) -> NSData
+    {
+        //ECDSA_SIG_recover_key_GFp(key->_key, sig, (unsigned char*)hash.bytes, (int)hash.length, rec, 0)
+        let sigComponents = stripDERFormatting(sig)
+        let reid = self.recoveryParameterForKey(self.compressedPublicKey.copy() as! NSData, withSignatureR: hexlify(sigComponents.0), andSignatureS: hexlify(sigComponents.1), andHash: hash)
+        let revalue = reid + 4 + 24
+        print("revalue: \(revalue)")
+        let rebyte = unhexlify(String(format:"%2x", revalue))
+ 
+        let predata = "\u{01}".dataUsingEncoding(NSUTF8StringEncoding)!.mutableCopy() as! NSMutableData
+        predata.appendData(rebyte!)
+        predata.appendData(sigComponents.0)
+        predata.appendData(sigComponents.1)
+
+        return predata
     }
     
 }

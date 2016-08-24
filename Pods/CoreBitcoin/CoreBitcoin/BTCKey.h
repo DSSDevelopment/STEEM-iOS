@@ -166,6 +166,8 @@
 
 + (BOOL) isCanonicalSignatureWithHashType:(NSData*)data verifyEvenS:(BOOL)verifyEvenS error:(NSError**)errorOut DEPRECATED_ATTRIBUTE;
 
+-(int)recoveryParameterForKey:(NSData*)key withSignatureR:(NSString*)r andSignatureS:(NSString *)s andHash:(NSData*)hash;
+
 
 @end
 

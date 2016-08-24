@@ -927,6 +927,41 @@ static int     ECDSA_SIG_recover_key_GFp(EC_KEY *eckey, ECDSA_SIG *ecsig, const 
     return YES;
 }
 
+
+-(int)recoveryParameterForKey:(NSData*)key withSignatureR:(NSString*)r andSignatureS:(NSString *)s andHash:(NSData*)hash
+{
+    NSData* pubkey = [self uncompressedPublicKey];
+    ECDSA_SIG *sig = ECDSA_SIG_new();
+    //unsigned char* sigbytes = ((NSMutableData*)[signature mutableCopy]).mutableBytes;
+    //NSData *rdata = [signature.copy subdataWithRange:NSMakeRange(4, 32)];
+    //NSData *sdata = [signature.copy subdataWithRange:NSMakeRange(37, 32)];
+    //NSString *rS = BTCHexFromData(rdata);
+    //NSString *sS = BTCHexFromData(sdata);
+    BTCBigNumber *rBN = [[BTCBigNumber alloc]initWithString:r base:16];
+    BTCBigNumber *sBN = [[BTCBigNumber alloc]initWithString:s base:16];
+    sig->r = rBN.BIGNUM;
+    sig->s = sBN.BIGNUM;
+     
+    //BN_bin2bn((const unsigned char*)[signature subdataWithRange:NSMakeRange(0, 32)].bytes,  32, sig->r);
+    //BN_bin2bn((const unsigned char*)[signature subdataWithRange:NSMakeRange(33, 32)].bytes, 32, sig->s);
+    //BTCKey* key2 = [[BTCKey alloc] initWithNewKeyPair:NO];
+    //key2.publicKey = self.publicKey;
+    //BTCKey* key2 = [[BTCKey alloc] initWithPrivateKey:self.privateKey];
+    
+    int rec = -1;
+    for (int i=0; i < 4; i++) {
+        BTCKey* key2 = [[BTCKey alloc] initWithNewKeyPair:NO];
+        if (ECDSA_SIG_recover_key_GFp(key2->_key, sig, (unsigned char*)hash.bytes, hash.length, i, 0) == 1) {
+            NSData* pubkey2 = [key2 uncompressedPublicKey];
+            if ([pubkey isEqual:pubkey2]) {
+                rec = i;
+                break;
+            }
+        }
+    }
+    return rec;
+}
+
 @end
 
 
@@ -1014,8 +1049,6 @@ static int BTCRegenerateKey(EC_KEY *eckey, BIGNUM *priv_key) {
     
     return success;
 }
-
-
 
 
 
